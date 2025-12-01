@@ -1,31 +1,29 @@
 #Part 2 for Day 1
-#test
 file = open("inputs1.txt", "r")
 nb = 50
 final = 0
 
 def indexing(c, n, l):
-    count = 0
-    count += (c // 100)
+    count = (c // 100)
     c = c % 100
+    inc = 1
+    if (n == 0):
+        count += inc
+        inc = 0
     if(l == "L"):
         if((n - c) < 0):
-            count +=1
-            #print("increment count cuz n - c => ", n, " - ", c, " = ", (n-c))
+            count += inc
             n = (n - c) + 100
         else:
           n -= c
     elif(l == "R"):
         if((n + c) > 100):
-            count += 1
-            #print("increment count cuz n + c => ", n, " + ", c, " = ", (n + c))
+            count += inc
             n = (n + c) - 100
+        elif((n + c) == 100):
+            n = 0
         else:
             n += c
-    if(n == 0):
-        count += 1
-        #print("increment count cuz n = 0")
-    #print("final n: ", n)
     return count, n
 
 for line in file:
