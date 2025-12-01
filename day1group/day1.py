@@ -1,4 +1,5 @@
 #Part 1 for Day 1
+#test
 file = open("inputs1.txt", "r")
 nb = 50
 count = 0
