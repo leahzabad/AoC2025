@@ -3,7 +3,6 @@
 file = open("inputs1.txt", "r")
 nb = 50
 count = 0
-
 def indexing(c, n, l):
     c = c % 100
     if(l == "L"):
@@ -18,7 +17,6 @@ def indexing(c, n, l):
             n += c
     print(n)
     return n
-
 for line in file:
     change = int(line[1:])
     letter = line[0:1]
